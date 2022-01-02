@@ -65,7 +65,7 @@ noteRoutes.route("/update/:id").post(function (req, response) {
     .collection("notes")
     .updateOne(myquery, newvalues, function (err, res) {
       if (err) throw err;
-      console.log("1 document updated");
+      console.log("One document updated");
       response.json(res);
     });
 });
