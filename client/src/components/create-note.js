@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from "axios";
+import { FloatingLabel, Form, Container } from "react-bootstrap";
 
 export default class Create extends Component {
   // This is the constructor that stores the data.
@@ -64,74 +65,79 @@ export default class Create extends Component {
   // This following section will display the form that takes the input from the user.
   render() {
     return (
-      <div style={{ marginTop: 20 }}>
-        <h3>Create New Note</h3>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Note Title: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.note_title}
-              onChange={this.onChangeNoteTitle}
-            />
+      <>
+        <Container>
+          <div style={{ marginTop: 20 }}>
+            <h3>Create New Note</h3>
+            <form onSubmit={this.onSubmit}>
+              <FloatingLabel controlId="floatingTextarea2" label="Note Title">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Note Title"
+                  value={this.state.note_title}
+                  onChange={this.onChangeNoteTitle}
+                  className="mb-3"
+                />
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingTextarea2" label="Note Text">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Note Text"
+                  value={this.state.note_body}
+                  onChange={this.onChangeNoteBody}
+                  style={{ height: "100px" }}
+                  className="mb-3"
+                />
+              </FloatingLabel>
+              <div className="form-group mb-3">
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityLow"
+                    value="Important"
+                    checked={this.state.note_category === "Important"}
+                    onChange={this.onChangeNoteCategory}
+                  />
+                  <label className="form-check-label">Important</label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityMedium"
+                    value="To-Do"
+                    checked={this.state.note_category === "To-Do"}
+                    onChange={this.onChangeNoteCategory}
+                  />
+                  <label className="form-check-label">To-Do</label>
+                </div>
+                <div className="form-check form-check-inline">
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="priorityOptions"
+                    id="priorityHigh"
+                    value="Random"
+                    checked={this.state.note_category === "Random"}
+                    onChange={this.onChangeNoteCategory}
+                  />
+                  <label className="form-check-label">Random</label>
+                </div>
+              </div>
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="Create Note"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
           </div>
-          <div className="form-group">
-            <label>Note Body: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.note_body}
-              onChange={this.onChangeNoteBody}
-            />
-          </div>
-          <div className="form-group">
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityLow"
-                value="Important"
-                checked={this.state.note_category === "Important"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">Important</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityMedium"
-                value="To-Do"
-                checked={this.state.note_category === "To-Do"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">To-Do</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityHigh"
-                value="Random"
-                checked={this.state.note_category === "Random"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">Random</label>
-            </div>
-          </div>
-          <div className="form-group">
-            <input
-              type="submit"
-              value="Create Note"
-              className="btn btn-primary"
-            />
-          </div>
-        </form>
-      </div>
+        </Container>
+      </>
     );
   }
 }
