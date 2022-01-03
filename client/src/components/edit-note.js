@@ -17,6 +17,7 @@ class Edit extends Component {
       note_title: "",
       note_body: "",
       note_category: "",
+      notes: [],
     };
   }
   // This will get the note based on the id from the database.
