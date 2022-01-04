@@ -60,6 +60,8 @@ export default class Create extends Component {
       note_body: "",
       note_category: "",
     });
+    //redirects the user back to the home page after form submission.
+    window.location.href = "/";
   }
 
   // This following section will display the form that takes the input from the user.
@@ -90,42 +92,15 @@ export default class Create extends Component {
                 />
               </FloatingLabel>
               <div className="form-group mb-3">
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priorityOptions"
-                    id="priorityLow"
-                    value="Important"
-                    checked={this.state.note_category === "Important"}
-                    onChange={this.onChangeNoteCategory}
-                  />
-                  <label className="form-check-label">Important</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priorityOptions"
-                    id="priorityMedium"
-                    value="To-Do"
-                    checked={this.state.note_category === "To-Do"}
-                    onChange={this.onChangeNoteCategory}
-                  />
-                  <label className="form-check-label">To-Do</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input
-                    className="form-check-input"
-                    type="radio"
-                    name="priorityOptions"
-                    id="priorityHigh"
-                    value="Random"
-                    checked={this.state.note_category === "Random"}
-                    onChange={this.onChangeNoteCategory}
-                  />
-                  <label className="form-check-label">Random</label>
-                </div>
+                <Form.Select
+                  value={this.state.value}
+                  onChange={this.onChangeNoteCategory}
+                >
+                  <option>Select Category. . .</option>
+                  <option value="Important">Important</option>
+                  <option value="To-Do">To-Do</option>
+                  <option value="Random">Random</option>
+                </Form.Select>
               </div>
               <div className="form-group">
                 <input
