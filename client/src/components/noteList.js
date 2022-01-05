@@ -9,7 +9,7 @@ const Note = (props) => (
     <td>{props.note.note_body}</td>
     <td>{props.note.note_category}</td>
     <td>
-      <Link to={"/edit/" + props.note._id}>Edit</Link> |
+      <Link to={"/edit/" + props.note._id}>Edit</Link> |{" "}
       <a
         href="/"
         onClick={() => {

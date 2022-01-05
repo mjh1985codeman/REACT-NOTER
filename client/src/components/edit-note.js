@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from "axios";
+import { FloatingLabel, Form, Container } from "react-bootstrap";
 import { withRouter } from "react-router";
 
 class Edit extends Component {
@@ -79,76 +80,52 @@ class Edit extends Component {
   // This following section will display the update-form that takes the input from the user to update the data.
   render() {
     return (
-      <div>
-        <h3 align="center">Update Note</h3>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Note Title: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.note_title}
-              onChange={this.onChangeNoteTitle}
-            />
+      <>
+        <Container>
+          <div>
+            <h3 align="center">Update Note</h3>
+            <form onSubmit={this.onSubmit}>
+              <FloatingLabel controlId="floatingTextarea2" label="Note Title">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Note Title"
+                  value={this.state.note_title}
+                  onChange={this.onChangeNoteTitle}
+                  className="mb-3"
+                />
+              </FloatingLabel>
+              <FloatingLabel controlId="floatingTextarea2" label="Note Text">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Note Text"
+                  value={this.state.note_body}
+                  onChange={this.onChangeNoteBody}
+                  style={{ height: "100px" }}
+                  className="mb-3"
+                />
+              </FloatingLabel>
+              <div className="form-group mb-3">
+                <Form.Select
+                  value={this.state.value}
+                  onChange={this.onChangeNoteCategory}
+                >
+                  <option>Select Category. . .</option>
+                  <option value="Important">Important</option>
+                  <option value="To-Do">To-Do</option>
+                  <option value="Random">Random</option>
+                </Form.Select>
+              </div>
+              <div className="form-group">
+                <input
+                  type="submit"
+                  value="Update"
+                  className="btn btn-primary"
+                />
+              </div>
+            </form>
           </div>
-          <div className="form-group">
-            <label>Note Body: </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.note_body}
-              onChange={this.onChangeNoteBody}
-            />
-          </div>
-          <div className="form-group">
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityLow"
-                value="Important"
-                checked={this.state.note_category === "Important"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">Important</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityMedium"
-                value="To-Do"
-                checked={this.state.note_category === "To-Do"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">To-Do</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="priorityOptions"
-                id="priorityHigh"
-                value="Random"
-                checked={this.state.note_category === "Random"}
-                onChange={this.onChangeNoteCategory}
-              />
-              <label className="form-check-label">Random</label>
-            </div>
-          </div>
-          <br />
-
-          <div className="form-group">
-            <input
-              type="submit"
-              value="Update Note"
-              className="btn btn-primary"
-            />
-          </div>
-        </form>
-      </div>
+        </Container>
+      </>
     );
   }
 }
