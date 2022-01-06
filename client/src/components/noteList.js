@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const Note = (props) => (
   <tr>
     <td>{props.note.note_title}</td>
-    <td>{props.note.note_body}</td>
     <td>{props.note.note_category}</td>
     <td>
+      <Link to={"/view/" + props.note._id}>View</Link> |{" "}
       <Link to={"/edit/" + props.note._id}>Edit</Link> |{" "}
       <a
         href="/"
@@ -75,7 +75,6 @@ export default class NoteList extends Component {
           <thead>
             <tr>
               <th>Title</th>
-              <th>Body</th>
               <th>Category</th>
               <th>Action</th>
             </tr>
