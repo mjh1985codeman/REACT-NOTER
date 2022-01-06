@@ -53,7 +53,7 @@ export default class NoteList extends Component {
     });
   }
 
-  // This method will map out the users on the table
+  // This method will map out the notes on the table
   noteList() {
     return this.state.notes.map((currentNote) => {
       return (

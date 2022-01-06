@@ -8,6 +8,7 @@ import Navbar from "./components/navbar";
 import Create from "./components/create-note";
 import Edit from "./components/edit-note";
 import NoteList from "./components/noteList";
+import View from "./components/view-note";
 
 const App = () => {
   return (
@@ -15,13 +16,12 @@ const App = () => {
       <Navbar />
 
       <Route exact path="/">
-        {" "}
         <NoteList />
       </Route>
       <Route path="/create">
-        {" "}
         <Create />
       </Route>
+      <Route path="/view/:id" component={View} />
       <Route path="/edit/:id" component={Edit} />
     </>
   );
