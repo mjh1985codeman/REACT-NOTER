@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 // This will require to npm install axios
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 
 const Note = (props) => (
-  <div>
-    <p>Title: {props.note.note_title}</p>
-    <p>Body: {props.note.note_body}</p>
-    <p>Category: {props.note.note_category}</p>
-  </div>
+  <>
+    <Card className="text-center">
+      <Card.Header>Category: {props.note.note_category}</Card.Header>
+      <Card.Title>{props.note.note_title}</Card.Title>
+      <Card.Body>
+        <Card.Text>{props.note.note_body} </Card.Text>
+      </Card.Body>
+      <Card.Footer className="text-muted">
+        I want to put the date the note was create here.
+      </Card.Footer>
+    </Card>
+  </>
 );
 
 export default class View extends Component {
@@ -29,7 +36,7 @@ export default class View extends Component {
       });
   }
 
-  // This method will map out the note on the table
+  // This will method will pull the note that is stored in state
   viewedNote() {
     return <Note note={this.state.note} />;
   }
