@@ -5,14 +5,15 @@ import { Container, Card, Button } from "react-bootstrap";
 
 const Note = (props) => (
   <>
-    <Card className="text-center">
-      <Card.Header>Category: {props.note.note_category}</Card.Header>
-      <Card.Title>{props.note.note_title}</Card.Title>
-      <Card.Body>
+    <Card className="text-center note-style">
+      <Card.Header>
+        <Card.Title>{props.note.note_title}</Card.Title>
+      </Card.Header>
+      <Card.Body className="note-style-body">
         <Card.Text>{props.note.note_body} </Card.Text>
       </Card.Body>
       <Card.Footer className="text-muted">
-        I want to put the date the note was create here.
+        {props.note.note_category}
       </Card.Footer>
     </Card>
   </>

@@ -1,0 +1,27 @@
+body {
+    background: url(./assets/Note-BackGround.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  }
+
+  .note-style {
+    margin-top: 3vh;  
+      
+  }
+
+  .note-style-body {
+      min-height:10vh;
+  }
+
+ 
+  .navbar-title {
+      font-size: 4vh;
+  }
+
+  .navbar-title:hover {
+      opacity: 0.8;
+      font-style: italic;
+  }

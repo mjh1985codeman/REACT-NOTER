@@ -6,38 +6,25 @@ import "bootstrap/dist/css/bootstrap.css";
 // We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
 
-// Here, we display our Navbar
-const Navbar = () => {
-  return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
-          React-Noter
-        </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+import { Navbar } from "react-bootstrap";
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/create">
-                Create Note
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
+// Here, we display our Navbar
+const Nav = () => {
+  return (
+    <div className="navbar-style">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar.Brand as={NavLink} to="/">
+          React-Noter
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <NavLink as={NavLink} to="/create">
+            Create Note
+          </NavLink>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 };
 
-export default Navbar;
+export default Nav;
