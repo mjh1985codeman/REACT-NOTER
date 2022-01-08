@@ -73,7 +73,7 @@ export default class Create extends Component {
             <div className="crt-note-custom">
               <h3>Write something awesome!</h3>
             </div>
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} className="createNote-style">
               <FloatingLabel controlId="floatingTextarea2" label="Note Title">
                 <Form.Control
                   as="textarea"

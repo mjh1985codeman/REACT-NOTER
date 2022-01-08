@@ -6,16 +6,32 @@ body {
   background-size: cover;
   background-color: black;
   }
+
+/* navigation styles  */
+
+  .nav-bar {
+    background: url(./assets/noternavbgd.png); 
+    border-bottom: solid 1vh #35322a;
+    border-top: solid 0.2vh #35322a;
+    border-right: solid 0.2vh #35322a;
+    border-left: solid 0.2vh #35322a;
+  }
+
+  .toggle {
+    background-color: white;
+    margin: 1vh;
+  }
  
   /* note list styles */
   .note-list {
-      background-color: white;
+      background-color: hsl(0, 0%, 100%);
       margin: 1vh;
       border: solid 1px black;
       border-top-left-radius: 37px 140px;
   border-top-right-radius: 23px 130px;
   border-bottom-left-radius: 110px 19px;
   border-bottom-right-radius: 120px 24px;
+  opacity: 0.9;
   }
 
   .note-list h3 {
@@ -28,7 +44,7 @@ body {
 
   .note-style {
     margin-top: 3vh;  
-
+    
       
   }
 
@@ -37,6 +53,10 @@ body {
       min-height:10vh;
   }
 
+/* Create Note Stylings.  */
+.createNote-style {
+  opacity: 0.9;
+}
 
   .crt-note-header {
       display: inline-block;
@@ -78,3 +98,5 @@ body {
     transform: translateY(-10px) rotate(1deg);
     box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
   }
+
+
