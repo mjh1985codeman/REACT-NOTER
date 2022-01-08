@@ -7,7 +7,9 @@ const Note = (props) => (
   <>
     <Card className="text-center note-style">
       <Card.Header>
-        <Card.Title>{props.note.note_title}</Card.Title>
+        <Card.Title className="crt-note-header">
+          {props.note.note_title}
+        </Card.Title>
       </Card.Header>
       <Card.Body className="note-style-body">
         <Card.Text>{props.note.note_body} </Card.Text>

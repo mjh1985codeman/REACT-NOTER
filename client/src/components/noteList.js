@@ -69,7 +69,7 @@ export default class NoteList extends Component {
   // This following section will display the table with the notes of individuals.
   render() {
     return (
-      <div>
+      <div className="note-list">
         <h3>Note List</h3>
         <table className="table table-striped" style={{ marginTop: 20 }}>
           <thead>

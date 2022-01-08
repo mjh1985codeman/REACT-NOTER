@@ -70,7 +70,9 @@ export default class Create extends Component {
       <>
         <Container>
           <div style={{ marginTop: 20 }}>
-            <h3>Create New Note</h3>
+            <div className="crt-note-custom">
+              <h3>Write something awesome!</h3>
+            </div>
             <form onSubmit={this.onSubmit}>
               <FloatingLabel controlId="floatingTextarea2" label="Note Title">
                 <Form.Control
@@ -105,8 +107,8 @@ export default class Create extends Component {
               <div className="form-group">
                 <input
                   type="submit"
-                  value="Create Note"
-                  className="btn btn-primary"
+                  value="Note It!"
+                  className="crt-note-header"
                 />
               </div>
             </form>

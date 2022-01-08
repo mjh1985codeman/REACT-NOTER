@@ -6,22 +6,75 @@ body {
   background-size: cover;
   background-color: black;
   }
+ 
+  /* note list styles */
+  .note-list {
+      background-color: white;
+      margin: 1vh;
+      border: solid 1px black;
+      border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+  }
+
+  .note-list h3 {
+    fill: #35322a;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 4vh;
+    font-weight: 900;
+      margin-left: 2.5vh;
+  }
 
   .note-style {
     margin-top: 3vh;  
+
       
   }
+
 
   .note-style-body {
       min-height:10vh;
   }
 
- 
-  .navbar-title {
-      font-size: 4vh;
+
+  .crt-note-header {
+      display: inline-block;
+      border: solid 1px black;
+      background-color:white;
+      margin: 1vh;
+      
+      border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+  padding: 1vh;
   }
 
-  .navbar-title:hover {
-      opacity: 0.8;
-      font-style: italic;
+  .crt-note-header:hover .border {
+    transform: translateY(4px) rotate(-5deg);
+    transition: all 0.13s ease-in;
+  }
+
+  .crt-note-header h3 {
+      padding: 1vh;
+  }
+
+  .crt-note-header:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+  }
+
+  .crt-note-custom {
+    display: inline-block;
+    border: solid 1px black;
+    background-color:white;
+    margin: 1vh;
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
+    padding: 1vh;
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
   }

@@ -11,19 +11,21 @@ import { Navbar } from "react-bootstrap";
 // Here, we display our Navbar
 const Nav = () => {
   return (
-    <div className="navbar-style">
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Navbar.Brand as={NavLink} to="/">
-          React-Noter
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar.Brand as={NavLink} to="/" className="crt-note-header me-auto">
+        <h1>React-Noter</h1>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Brand
+          as={NavLink}
+          to="/create"
+          className="crt-note-header me-auto"
+        >
+          Create Note
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <NavLink as={NavLink} to="/create">
-            Create Note
-          </NavLink>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
