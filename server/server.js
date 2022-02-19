@@ -13,6 +13,15 @@ app.use(require("./routes/note-routes", cors()));
 // import the database connection
 const dbo = require("./db/connection");
 
+// Serve up static assets
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+}
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 app.listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
