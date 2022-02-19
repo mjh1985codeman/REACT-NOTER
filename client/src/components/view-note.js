@@ -30,7 +30,7 @@ export default class View extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/note/" + this.props.match.params.id)
+      .get("/note/" + this.props.match.params.id)
       .then((response) => {
         this.setState({ note: response.data });
       })

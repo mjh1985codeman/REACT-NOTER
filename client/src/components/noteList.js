@@ -33,7 +33,7 @@ export default class NoteList extends Component {
   // This method will get the data from the database.
   componentDidMount() {
     axios
-      .get("http://localhost:5000/note/")
+      .get("/note/")
       .then((response) => {
         this.setState({ notes: response.data });
       })
@@ -44,7 +44,7 @@ export default class NoteList extends Component {
 
   // This method will delete a note based on the method
   deleteNote(id) {
-    axios.delete("http://localhost:5000/" + id).then((response) => {
+    axios.delete("/" + id).then((response) => {
       console.log(response.data);
     });
 

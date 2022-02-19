@@ -50,9 +50,7 @@ export default class Create extends Component {
       note_category: this.state.note_category,
     };
 
-    axios
-      .post("http://localhost:5000/note/add", newNote)
-      .then((res) => console.log(res.data));
+    axios.post("/note/add", newNote).then((res) => console.log(res.data));
 
     // We will empty the state after posting the data to the database
     this.setState({

@@ -24,7 +24,7 @@ class Edit extends Component {
   // This will get the note based on the id from the database.
   componentDidMount() {
     axios
-      .get("http://localhost:5000/note/" + this.props.match.params.id)
+      .get("/note/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
           note_title: response.data.note_title,
@@ -68,10 +68,7 @@ class Edit extends Component {
 
     // This will send a post request to update the data in the database.
     axios
-      .post(
-        "http://localhost:5000/update/" + this.props.match.params.id,
-        newEditednote
-      )
+      .post("/update/" + this.props.match.params.id, newEditednote)
       .then((res) => console.log(res.data));
 
     this.props.history.push("/");
